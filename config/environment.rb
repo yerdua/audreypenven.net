@@ -7,6 +7,7 @@ PAPERCLIP_ATTACHMENT_OPTIONS = {
   path:           ':class/:id/:style.:extension', # e.g. photographs/345/small.jpg
   storage:        :s3,
   s3_protocol:    'https',
+  s3_host_name:   "s3-#{ENV.fetch('AWS_REGION')}.amazonaws.com",
   s3_credentials: {
     bucket: "audreypenven.#{Rails.env}",
     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),

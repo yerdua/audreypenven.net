@@ -1,4 +1,7 @@
 class PhotographsController < ApplicationController
+  before_filter :authenticate, only: [:new, :create, :edit, :update]
+  before_filter :load_photograph, only: [:show, :edit]
+
   def new
     @photograph = Photograph.new
   end
