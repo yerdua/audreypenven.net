@@ -1,0 +1,26 @@
+body.blog, body.blog-post {
+  .primary-image {
+    background-image: url('/images/section_backgrounds/blog.jpg');
+  }
+}
+
+body.blog {
+  a.post-title {
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+}
+ul.blog-post-list {
+  list-style: none;
+  margin-left: 0;
+  li {
+    margin-bottom: 30px;
+  }
+}
+.post-date {
+  color: $dark-cherry;
+}
+.post-excerpt {
+  color: $slate;
+}

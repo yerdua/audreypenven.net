@@ -39,6 +39,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    awesome_print (1.7.0)
     aws-sdk (2.7.7)
       aws-sdk-resources (= 2.7.7)
     aws-sdk-core (2.7.7)
@@ -190,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   aws-sdk
   byebug
   coffee-rails (~> 4.2)
