@@ -15,7 +15,8 @@ class PhotographsController < ApplicationController
     end
   end
 
-  def show
+  def portfolio
+    @body_class = 'red-first'
   end
 
   private

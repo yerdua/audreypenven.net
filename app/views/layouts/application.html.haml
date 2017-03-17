@@ -1,0 +1,16 @@
+!!! HTML
+
+%html
+  %head
+    %title Audrey Penven
+    = csrf_meta_tags
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = yield :head
+
+  %body{class: @body_class}
+    = render 'shared/header'
+    .wrapper
+      .page-content= yield
+      = render 'shared/footer'

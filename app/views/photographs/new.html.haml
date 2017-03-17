@@ -1,5 +1,10 @@
 = form_for @photograph do |f|
-  = f.file_field :image
-  = f.date_select :taken_on
-  = f.text_field :title
-  = f.submit
+  %div
+    = f.file_field :image
+  %div
+    = f.label :taken_on
+    = f.date_select :taken_on
+  %div
+    = f.label :title
+    = f.text_field :title
+  = f.submit 'Upload'
