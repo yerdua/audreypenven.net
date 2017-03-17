@@ -9,13 +9,20 @@ class PhotographsController < ApplicationController
   def create
     @photograph = Photograph.new(allowed_params)
     if @photograph.save
-      render 'SAVED!'
+      redirect_to @photograph
     else
       render :new
     end
   end
 
+  def show
+  end
+
   private
+
+  def load_photograph
+    @photograph = Photograph.find(params[:id])
+  end
 
   def allowed_params
     params.require(:photograph).permit(:image)
