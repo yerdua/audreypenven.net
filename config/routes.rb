@@ -4,4 +4,6 @@ Rails.application.routes.draw do
       get :portfolio
     end
   end
+
+  resources :albums
 end

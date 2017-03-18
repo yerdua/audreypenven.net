@@ -8,7 +8,8 @@ class Photograph < ApplicationRecord
       styles: {
         large: ['2000x2000>', :jpg],
         medium: ['1000x1000>', :jpg],
-        small_square: ['200x200#', :jpg]
+        square_200: ['200x200#', :jpg],
+        square_150: ['150x150#', :jpg]
       }
     })
 
