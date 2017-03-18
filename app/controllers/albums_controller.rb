@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
   before_filter :load_album
 
   def show
+    @body_class = 'red-first'
   end
 
   private

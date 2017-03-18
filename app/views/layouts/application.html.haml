@@ -9,7 +9,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     = yield :head
 
-  %body{class: @body_class}
+  %body{class: "#{controller_name}-#{action_name} #{@body_class}"}
     = render 'shared/header'
     .wrapper
       .page-content= yield

@@ -169,10 +169,14 @@ body.black-first {
     &:nth-child(even) { @extend %red-section; }
   }
 }
-.primary-image {
+
+.primary-photograph {
   background-attachment: fixed;
   background-size: cover;
-  background-position: center;
-  height: 200px;
+  background-position: center 25%;
+  background-repeat: no-repeat;
+  background-color: $black;
+
+  height: 300px;
 }
 

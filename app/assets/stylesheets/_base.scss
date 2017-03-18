@@ -24,7 +24,8 @@ body {
 }
 
 .container {
-  max-width: 1050px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .site-header {
@@ -55,17 +56,6 @@ img {
     border: 3px solid $black;
   }
 }
-
-.primary-image {
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center 50px;
-  background-repeat: no-repeat;
-  background-color: $black;
-
-  height: 300px;
-}
-
 
 
 /**
