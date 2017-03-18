@@ -3,11 +3,13 @@ class Photograph < ApplicationRecord
   has_many :collaborator_roles
   has_many :collaborators, through: :collaborator_roles
 
+  # Short edge measurements are based on 35mm proportions
   has_attached_file :image,
     PAPERCLIP_ATTACHMENT_OPTIONS.merge({
       styles: {
-        large: ['2000x2000>', :jpg],
-        medium: ['1000x1000>', :jpg],
+        large:      ['2000x2000>', :jpg], #short edge: 1333
+        medium:     ['1000x1000>', :jpg], #short edge: 667
+        small:      ['500x500>', :jpg],   #short edge: 333
         square_200: ['200x200#', :jpg],
         square_150: ['150x150#', :jpg]
       }

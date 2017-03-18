@@ -56,6 +56,16 @@ img {
   }
 }
 
+.primary-image {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center 50px;
+  background-repeat: no-repeat;
+  background-color: $black;
+
+  height: 300px;
+}
+
 
 
 /**

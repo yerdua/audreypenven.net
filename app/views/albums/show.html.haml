@@ -1,0 +1,25 @@
+= content_for :head do
+  :css
+    @media (max-width: 333px) {
+      .primary-image {
+        background-image: url(#{@album.photographs.first.image.url(:small)});
+      }
+    }
+    @media (max-width: 667px) {
+      .primary-image {
+        background-image: url(#{@album.photographs.first.image.url(:medium)});
+      }
+    }
+    @media (min-width: 668px) {
+      .primary-image {
+        background-image: url(#{@album.photographs.first.image.url(:large)});
+      }
+    }
+
+%section.primary-image
+
+%section#gallery
+  .container
+    %h1.red.with-underline= @album.title
+    - @album.photographs.each do |photograph|
+      = image_tag(photograph.image.url(:square_150))
