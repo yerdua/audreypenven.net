@@ -2,6 +2,7 @@ class PhotoImporter
   PHOTODUMP_BUCKET = 'audreypenven.photodump'
 
   attr_reader :client, :photographs, :bucket, :errors
+
   def initialize
     @client = Aws::S3::Client.new( region: ENV.fetch('AWS_REGION'),
                                   access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
@@ -13,6 +14,8 @@ class PhotoImporter
   end
 
   def import(options = {})
+    raise 'Nothing to import' unless @bucket.objects.any?
+
     @bucket.objects.each do |s3_object|
       begin
         @photographs << Photograph.create!( image: URI.parse(s3_object.public_url),
