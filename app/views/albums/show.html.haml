@@ -23,12 +23,11 @@
   .container
     %h1.red.with-underline= @album.title
     - @album.photographs.each do |photograph|
-      = image_tag(photograph.image.url(:square_150), class: 'thumbnail')
+      %a{href: "#{photograph.image.url(:large)}", data: {featherlight: 'image'}}= image_tag(photograph.image.url(:square_150), class: 'thumbnail')
 
 - unless @album.description.blank?
   %section.description
     .container
       = @album.description
 
-- unless @
-
+/ # - unless @album.collaborator_titles.empty?

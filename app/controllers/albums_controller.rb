@@ -8,6 +8,6 @@ class AlbumsController < ApplicationController
   private
 
   def load_album
-    @album = Album.includes(photographs: {collaborator_roles: :collaborators}).find(params[:id])
+    @album = Album.includes(photographs: {collaborator_roles: :collaborator}).find(params[:id])
   end
 end

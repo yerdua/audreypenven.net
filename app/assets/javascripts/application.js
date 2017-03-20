@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require featherlight
+//= require featherlight-gallery
 //= require turbolinks
-//= require_tree .
+//= require featherlight-photos
