@@ -1,0 +1,61 @@
+%section#site-title
+  .title
+    =image_tag('logo_large.png', alt: 'Audrey Penven', class: 'site-logo')
+
+%section.portfolio
+  %div
+    %h2.red.with-underline Projects
+    / {% photo_page_link_tag dancing-with-invisible-light %}
+    / {% photo_page_link_tag six %}
+
+  %div
+    %h2.red.with-underline Collections
+    / {% photo_page_link_tag music %}
+    / {% photo_page_link_tag portraits %}
+    / {% photo_page_link_tag hubba-hubba-revue %}
+
+%section.photo-stream
+  %div
+    %h2.black.with-underline Full Photo Archive
+
+%section.contact
+  %div
+    %img.black-border.bio-photo.pull-left{src: '/images/self_portrait_ljubljana.jpg'}
+
+    %h2.red Me, elsewhere
+    %table.find-elsewhere
+      %tr
+        %td
+          = fa_icon 'envelope fw'
+          email
+        %td
+          %a{href: 'mailto:audrey@audreypenven.net'}
+            audrey@audreypenven.net
+      %tr
+        %td
+          = fa_icon 'twitter fw'
+          twitter
+        %td
+          %a{href: 'http://www.twitter.com/yerdua'}
+            @yerdua
+      %tr
+        %td
+          = fa_icon 'flickr fw'
+          flickr
+        %td
+          %a{href: 'https://www.flickr.com/photos/audreypenven/'}
+            flickr.com/photos/audreypenven
+      %tr
+        %td
+          = fa_icon 'instagram fw'
+          instagram
+        %td
+          %a{href: 'http://instagram.com/y3rdua'}
+            @y3rdua
+      %tr
+        %td
+          = fa_icon 'github fw'
+          github
+        %td
+          %a{href: 'https://github.com/yerdua'}
+            github.com/yerdua
