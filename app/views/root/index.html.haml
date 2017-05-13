@@ -20,7 +20,11 @@
 
 %section.contact
   %div
-    %img.black-border.bio-photo.pull-left{src: '/images/self_portrait_ljubljana.jpg'}
+    .image-with-caption.pull-left.bio-photo
+      = image_tag('me-by-nadya-400x400.jpg', class: 'black-border')
+      %p
+        photo by
+        = link_to 'Nadya Lev', 'http://www.nadyalevphoto.com/'
 
     %h2.red Me, elsewhere
     %table.find-elsewhere

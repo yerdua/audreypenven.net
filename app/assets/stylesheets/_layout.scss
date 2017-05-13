@@ -154,7 +154,10 @@
   }
 }
 
-section { padding: 50px; }
+section {
+  padding: 50px;
+  @extend %clearfix;
+}
 
 body.red-first {
   section {
