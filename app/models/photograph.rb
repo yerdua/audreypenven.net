@@ -2,6 +2,9 @@ class Photograph < ApplicationRecord
   has_and_belongs_to_many :albums
   has_many :collaborator_roles
   has_many :collaborators, through: :collaborator_roles
+  has_many :site_image_mappings
+
+  scope :for_location, ->(location_key) {joins(:site_image_mappings).where(site_image_mappings: { location_key: location_key})}
 
   # Short edge measurements are based on 35mm proportions
   has_attached_file :image,

@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box; }
+
 /**
  * Reset some basic elements
  */
@@ -263,9 +266,12 @@ pre {
   }
 }
 
-.flickr-album-link {
-  height: 150px;
-  width: 150px;
+.stream-album-link {
+  height: 154px;
+  width: 154px;
+  img {
+    border: 2px solid $black;
+  }
 }
 
 .portfolio-link {

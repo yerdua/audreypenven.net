@@ -3,6 +3,7 @@ class AlbumsController < ApplicationController
 
   def show
     @body_class = 'red-first'
+    @header_image = @album.primary_photograph
   end
 
   private

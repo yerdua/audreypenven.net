@@ -15,6 +15,8 @@ class Album < ApplicationRecord
   private
 
   def primary_photograph_in_album
-    errors[:primary_photograph] << 'must be a photograph in this album'
+    unless photographs.include?(primary_photograph)
+      errors[:primary_photograph] << 'must be a photograph in this album'
+    end
   end
 end

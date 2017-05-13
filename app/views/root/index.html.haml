@@ -1,4 +1,4 @@
-%section#site-title
+%section.site-title.header-photograph
   .title
     =image_tag('logo_large.png', alt: 'Audrey Penven', class: 'site-logo')
 
@@ -17,6 +17,12 @@
 %section.photo-stream
   %div
     %h2.black.with-underline Full Photo Archive
+    %div
+      - @albums.each do |album|
+        .stream-album-link.album-link
+          = image_tag(album.primary_photograph.image.url(:square_150), alt: "@album.title")
+          = link_to album_path(album) do
+            %h5.album-title= album.title
 
 %section.contact
   %div

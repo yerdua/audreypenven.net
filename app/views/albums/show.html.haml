@@ -2,22 +2,22 @@
   - if @album.primary_photograph
     :css
       @media (max-width: 333px) {
-        .primary-photograph {
+        .header-photograph {
           background-image: url(#{@album.primary_photograph.image.url(:small)});
         }
       }
       @media (max-width: 667px) {
-        .primary-photograph {
+        .header-photograph {
           background-image: url(#{@album.primary_photograph.image.url(:medium)});
         }
       }
       @media (min-width: 668px) {
-        .primary-photograph {
+        .header-photograph {
           background-image: url(#{@album.primary_photograph.image.url(:large)});
         }
       }
 
-%section.primary-photograph
+%section.header-photograph
 
 %section.gallery
   .container

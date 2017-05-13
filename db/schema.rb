@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170318065235) do
+ActiveRecord::Schema.define(version: 20170513020258) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
@@ -54,6 +54,11 @@ ActiveRecord::Schema.define(version: 20170318065235) do
     t.datetime "image_updated_at"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "site_image_mappings", force: :cascade do |t|
+    t.string  "location_key"
+    t.integer "photograph_id"
   end
 
 end
