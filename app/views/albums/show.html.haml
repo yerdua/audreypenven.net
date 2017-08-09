@@ -1,21 +1,19 @@
 = content_for :head do
-  - if @album.primary_photograph
-    :css
-      @media (max-width: 333px) {
-        .header-photograph {
-          background-image: url(#{@album.primary_photograph.image.url(:small)});
+
+  :javascript
+    $(function() {
+
+      $.extend($.featherlight.defaults, {
+        afterContent: function(e){
+          var height = $('.featherlight-content', this.$instance).height();
+          console.log('height: ' + height);
+          $('img', this.$instance).attr('style', 'max-height:' + (height - 50) + 'px;');
+
+          var width = $('.featherlight-content', this.$instance).width();
+          $('.meta', this.$content).attr('style', 'width:' + width + 'px;');
         }
-      }
-      @media (max-width: 667px) {
-        .header-photograph {
-          background-image: url(#{@album.primary_photograph.image.url(:medium)});
-        }
-      }
-      @media (min-width: 668px) {
-        .header-photograph {
-          background-image: url(#{@album.primary_photograph.image.url(:large)});
-        }
-      }
+      });
+    });
 
 %section.header-photograph
 
@@ -23,7 +21,7 @@
   .container
     %h1.red.with-underline= @album.title
     - @album.photographs.each do |photograph|
-      %a{href: "#{photograph.image.url(:large)}", data: {featherlight: 'image'}}= image_tag(photograph.image.url(:square_150), class: 'thumbnail')
+      %a.photo-link{href: photograph.image.url(:large), data: {featherlight: 'image'}}= image_tag(photograph.image.url(:square_150), class: 'thumbnail')
 
 - unless @album.description.blank?
   %section.description

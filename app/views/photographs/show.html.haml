@@ -1,2 +1,4 @@
 %h1= @photograph.title
-= image_tag @photograph.image.url(:medium)
+
+.photograph
+  = image_tag @photograph.image.url(:medium)
