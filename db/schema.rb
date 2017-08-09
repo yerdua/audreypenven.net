@@ -10,14 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513020258) do
+ActiveRecord::Schema.define(version: 20170809060242) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.integer  "primary_photograph_id"
+    t.string   "classification",        default: "album"
+    t.index ["classification"], name: "index_albums_on_classification"
   end
 
   create_table "albums_photographs", id: false, force: :cascade do |t|

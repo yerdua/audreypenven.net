@@ -3,17 +3,23 @@
     =image_tag('logo_large.png', alt: 'Audrey Penven', class: 'site-logo')
 
 %section.portfolio
-  %div
+  .photo-projects
     %h2.red.with-underline Projects
-    / {% photo_page_link_tag dancing-with-invisible-light %}
-    / {% photo_page_link_tag six %}
+    %div
+      - @projects.each do |album|
+        .project-album-link.album-link
+          = image_tag(album.primary_photograph.image.url(:square_150), alt: "@album.title")
+          = link_to album_path(album) do
+            %h5.album-title= album.title
 
-  %div
+  .photo-collections
     %h2.red.with-underline Collections
-    / {% photo_page_link_tag music %}
-    / {% photo_page_link_tag portraits %}
-    / {% photo_page_link_tag hubba-hubba-revue %}
-
+    %div
+      - @collections.each do |album|
+        .collection-album-link.album-link
+          = image_tag(album.primary_photograph.image.url(:square_150), alt: "@album.title")
+          = link_to album_path(album) do
+            %h5.album-title= album.title
 %section.photo-stream
   %div
     %h2.black.with-underline Full Photo Archive
