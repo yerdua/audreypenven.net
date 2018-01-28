@@ -1,5 +1,5 @@
 class PhotographsController < ApplicationController
-  before_filter :authenticate, only: [:new, :create, :edit, :update]
+  # before_filter :authenticate, only: [:new, :create, :edit, :update]
   before_filter :load_photograph, only: [:show, :edit]
 
   def new
@@ -23,6 +23,7 @@ class PhotographsController < ApplicationController
 
   def load_photograph
     @photograph = Photograph.find(params[:id])
+    @collaborator_to_roles = @photograph.collaborator_roles.includes(:collaborator).group_by(&:collaborator)
   end
 
   def allowed_params

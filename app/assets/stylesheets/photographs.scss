@@ -1,3 +1,28 @@
-// Place all the styles related to the photographs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.photograph {
+  position: relative;
+  .meta {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+    opacity: 0;
+
+    background-color: rgba(0, 0, 0, 0.8);
+    color: $silver;
+    font-size: 13px;
+    text-align: center;
+
+    &.visible {
+      opacity: 1;
+    }
+
+    .collaborators {
+      margin: 0;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+    }
+  }
+}

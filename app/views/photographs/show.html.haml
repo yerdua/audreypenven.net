@@ -1,4 +1,15 @@
-%h1= @photograph.title
-
 .photograph
   = image_tag @photograph.image.url(:medium)
+  .meta
+    - if @photograph.title
+      %h4= @photograph.title
+    - if @collaborator_to_roles
+      %h5.collaborators Collaborators
+      %ul
+        - @collaborator_to_roles.each do |collaborator, roles|
+          %li
+            = "#{roles.map(&:title).join(', ')}: "
+            - if collaborator.url
+              = link_to collaborator.name, collaborator.url, target: :_blank
+            - else
+              = collaborator.name

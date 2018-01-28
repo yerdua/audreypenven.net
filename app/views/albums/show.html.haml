@@ -5,15 +5,17 @@
 
       $.extend($.featherlight.defaults, {
         afterContent: function(e){
-          var height = $('.featherlight-content', this.$instance).height();
-          console.log('height: ' + height);
-          $('img', this.$instance).attr('style', 'max-height:' + (height - 50) + 'px;');
+          var max_height = this.$instance.height() - 40;
+          var max_width = this.$instance.width() - 40;
+          $('img', this.$instance).attr('style', 'max-height:' + max_height + 'px; max-width:' + max_width + 'px;');
+        },
+      });
 
-          var width = $('.featherlight-content', this.$instance).width();
-          $('.meta', this.$content).attr('style', 'width:' + width + 'px;');
-        }
+      $('body').on('click tap', '.featherlight img', function() {
+        $('.featherlight .meta').toggleClass('visible');
       });
     });
+
 
 %section.header-photograph
 
@@ -21,7 +23,8 @@
   .container
     %h1.red.with-underline= @album.title
     - @album.photographs.each do |photograph|
-      %a.photo-link{href: photograph.image.url(:large), data: {featherlight: 'image'}}= image_tag(photograph.image.url(:square_150), class: 'thumbnail')
+      %a.photo-link{href: "#{photograph_path(photograph)} .photograph", data: {featherlight: 'ajax' }}= image_tag(photograph.image.url(:square_150), class: 'thumbnail')
+
 
 - unless @album.description.blank?
   %section.description
